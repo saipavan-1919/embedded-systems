@@ -1,0 +1,21 @@
+TASK:
+	Process performed by the system is known as a Task.
+	Both process and threads are considered as Tasks only.
+	Thread is sub-process of a main processs, so they are known as tasks.
+     
+
+PROCESS:
+        Process is the execution of a program.
+	It is also known as instance of a program.
+	Process creates code,data,stack,heap segments in the memory.
+	Processes executes paralelly.
+	
+	
+
+THREAD:
+	Small unit of a process is known as a Thrread.
+	Thread is a sub-process in a process.
+	It only creates stack segment.
+	Thread are similar to the functions.
+	Threads consist of thread definition,declaration.it does not contain calling.
+	Threads runs one after the other

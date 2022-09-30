@@ -1,0 +1,49 @@
+3. How to start a new process in shell?
+ans: 
+	To start a new process we need to use fork and execve system calls. First we need to create a new process by using 
+fork system call. Fork system call will duplicate the process and it creates a new process. Then we can use execve system 
+call to replace the duplicated process to run the required process.
+	Shell is program which interprets the commands. Shell program is stored in the "/bin/sh" folder.
+
+example:
+the following example shows how to create a shell and run a new process:
+
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<stdlib.h>
+#include<sys/wait.h>
+int main(int argc,char * argv[])
+{
+	int ret1,status,ret2;
+	ret1= fork();
+	switch(ret1)
+	{
+		case -1:
+			{
+			printf("fork failed");
+			break;
+			}
+		case 0:
+			{
+			printf("child running\n");
+			ret2=execve("/bin/sh",argv,NULL);
+		//	getchar();
+			if(ret2==-1)
+				printf("execve failed\n");
+			exit(0);
+			break;
+			}
+		default:
+			{
+			printf("parent running\n");
+			wait(&status);
+			if(status==0)
+			{
+				printf("child is terminated\n");
+			}
+			}
+	}
+	return 0;
+	exit(0);
+}

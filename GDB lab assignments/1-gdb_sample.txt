@@ -1,0 +1,83 @@
+Reading symbols from debug1...done.
+(gdb) b 10
+Breakpoint 1 at 0x610: file example.c, line 10.
+(gdb) b 34
+Breakpoint 2 at 0x67e: file example.c, line 34.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000000610 in main at example.c:10
+2       breakpoint     keep y   0x000000000000067e in change_value at example.c:34
+(gdb) r
+Starting program: /home/km/sai/debug_example/debug1 
+
+Breakpoint 1, main () at example.c:11
+11	for(int i=0;i<10;i++)
+(gdb) s
+13	if(a<b)
+(gdb) s
+15	a=add(a,b);
+(gdb) s
+add (a=20, b=40) at example.c:27
+27	return a+b;
+(gdb) s
+28	}
+(gdb) s
+main () at example.c:11
+11	for(int i=0;i<10;i++)
+(gdb) s
+13	if(a<b)
+(gdb) s
+19	b=add(a,b);
+(gdb) n
+11	for(int i=0;i<10;i++)
+(gdb) s
+13	if(a<b)
+(gdb) c
+Continuing.
+
+Breakpoint 2, change_value () at example.c:35
+35	 result=10/change_value;             //here div_value=10
+(gdb) s
+36	}
+(gdb) s
+main () at example.c:23
+23	}
+(gdb) s
+__libc_start_main (main=0x5555555545fa <main>, argc=1, argv=0x7fffffffe198, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffe188) at ../csu/libc-start.c:344
+344	../csu/libc-start.c: No such file or directory.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/km/sai/debug_example/debug1 
+
+Breakpoint 1, main () at example.c:11
+11	for(int i=0;i<10;i++)
+(gdb) p div_value=0
+$1 = 0
+(gdb) s
+13	if(a<b)
+(gdb) s
+15	a=add(a,b);
+(gdb) s
+add (a=20, b=40) at example.c:27
+27	return a+b;
+(gdb) s
+28	}
+(gdb) s
+main () at example.c:11
+11	for(int i=0;i<10;i++)
+(gdb) c
+Continuing.
+
+Breakpoint 2, change_value () at example.c:35
+35	 result=10/change_value;              //here div_value=0
+(gdb) s
+
+Program received signal SIGFPE, Arithmetic exception.
+0x0000555555554684 in change_value () at example.c:35
+35	 result=10/change_value;
+(gdb) s
+
+Program terminated with signal SIGFPE, Arithmetic exception.
+The program no longer exists.

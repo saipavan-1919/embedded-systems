@@ -1,0 +1,11 @@
+How threads communicate:
+
+	Threads execute one after the other.When one thread is terminated or in waiting mode then only next thread
+	is executed,otherwise remaining threads stays in waiting mode.
+	we need to create a global variable to make the threads communicate with each other.
+	Threads share the code and data segment in the memory, so they can access the global vriable like for ex: "counter".
+	when threads share the same global there are some problems in the output.
+	data inconsistancy is the main problem with the shring of global varibles.
+	when one thread is executing the remaining threads will be in waiting state.
+	
+	

@@ -1,0 +1,150 @@
+Reading symbols from debug5...done.
+(gdb) b main.c:7
+Breakpoint 1 at 0x78a: file main.c, line 7.
+(gdb) b sellstock.c:7
+Breakpoint 2 at 0x90d: file sellstock.c, line 7.
+(gdb) b purchasestock.c:7
+Breakpoint 3 at 0x872: file purchasestock.c, line 7.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000000000000078a in main at main.c:7
+2       breakpoint     keep y   0x000000000000090d in sellstock at sellstock.c:7
+3       breakpoint     keep y   0x0000000000000872 in purchasestock at purchasestock.c:7
+(gdb) r
+Starting program: /home/km/sai/storageclass/supermarket/debug5 
+
+Breakpoint 1, main () at main.c:8
+8			printf("choose one :\n 1-checking stock\n 2-selling stock\n 3-purchasing stock\n 4-quit\n enter number to choose =");
+(gdb) n
+choose one :
+ 1-checking stock
+ 2-selling stock
+ 3-purchasing stock
+ 4-quit
+9			scanf("%d",&select);
+(gdb) n
+ enter number to choose =2
+10			if(select==1)
+(gdb) s
+12			else if(select==2)
+(gdb) s
+13				sellstock();
+(gdb) s
+sellstock () at sellstock.c:6
+6	        int i=1;
+(gdb) s
+
+Breakpoint 2, sellstock () at sellstock.c:7
+7		while(i==1)
+(gdb) s
+9		printf("enter no.of items required=");
+(gdb) n
+10		scanf("%d",&n);
+(gdb) n
+enter no.of items required=100
+11		if(stock>n)
+(gdb) s
+13		stock=stock-n;
+(gdb) s
+14		i=0;
+(gdb) s
+7		while(i==1)
+(gdb) s
+23	}
+(gdb) s
+main () at main.c:6
+6		while(i==1)
+(gdb) s
+
+Breakpoint 1, main () at main.c:8
+8			printf("choose one :\n 1-checking stock\n 2-selling stock\n 3-purchasing stock\n 4-quit\n enter number to choose =");
+(gdb) n
+choose one :
+ 1-checking stock
+ 2-selling stock
+ 3-purchasing stock
+ 4-quit
+9			scanf("%d",&select);
+(gdb) n
+ enter number to choose =1
+10			if(select==1)
+(gdb) s
+11				checkstock();
+(gdb) s
+checkstock () at checkstock.c:5
+5	        printf("stock=%d\n",stock);
+(gdb) n
+stock=900
+6	}
+(gdb) s
+main () at main.c:6
+6		while(i==1)
+(gdb) s
+
+Breakpoint 1, main () at main.c:8
+8			printf("choose one :\n 1-checking stock\n 2-selling stock\n 3-purchasing stock\n 4-quit\n enter number to choose =");
+(gdb) n
+choose one :
+ 1-checking stock
+ 2-selling stock
+ 3-purchasing stock
+ 4-quit
+9			scanf("%d",&select);
+(gdb) n
+ enter number to choose =3
+10			if(select==1)
+(gdb) s
+12			else if(select==2)
+(gdb) s
+14			else if(select==3)
+(gdb) s
+15	                      purchasestock();
+(gdb) s
+purchasestock () at purchasestock.c:4
+4	{
+(gdb) s
+5		int i=1,a,m;
+(gdb) s
+6		a=1000-stock;
+(gdb) s
+
+Breakpoint 3, purchasestock () at purchasestock.c:7
+7		while(i==1)
+(gdb) s
+9		printf("enter no.of items required to purchase=");
+(gdb) n
+10		scanf("%d",&m);
+(gdb) n
+enter no.of items required to purchase=100
+11	        if((stock+m)>1000)
+(gdb) s
+19			stock=stock+m;
+(gdb) s
+20			i=0;
+(gdb) s
+21			break;
+(gdb) s
+24	}	
+(gdb) s
+main () at main.c:6
+6		while(i==1)
+(gdb) s
+
+Breakpoint 1, main () at main.c:8
+8			printf("choose one :\n 1-checking stock\n 2-selling stock\n 3-purchasing stock\n 4-quit\n enter number to choose =");
+(gdb) n
+choose one :
+ 1-checking stock
+ 2-selling stock
+ 3-purchasing stock
+ 4-quit
+9			scanf("%d",&select);
+(gdb) n
+ enter number to choose =1
+10			if(select==1)
+(gdb) s
+11				checkstock();
+(gdb) n
+stock=1000
+6		while(i==1)
+(gdb) 

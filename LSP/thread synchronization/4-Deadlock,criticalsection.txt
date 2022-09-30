@@ -1,0 +1,17 @@
+Critical section:
+	
+	Critical section is the main section in the thread synchronization using semaphores mechanism.
+	We can access the shared resources through critical section.
+	There are one section before and after the critical sections they are known as entry section and
+	exit section.
+	
+Deadlock:
+
+	Deadlock occurs When two or more threads are wiating to get the locks which are blocked by other threads.
+	if a program has two threads if two threads are waiting then the program doesn't run. so that kind of 
+	situation is known as Deadlock.
+
+Race around condition:
+
+	when same information accessed by multiple threads there is a chance of getting unexpected output ,that kind
+	of situation is known as Race around condition

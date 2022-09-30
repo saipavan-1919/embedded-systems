@@ -1,0 +1,62 @@
+Reading symbols from largest_debug...done.
+(gdb) b 11
+Breakpoint 1 at 0x7a1: file largest3.c, line 11.
+(gdb) b 34
+Breakpoint 2 at 0x806: file largest3.c, line 34.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00000000000007a1 in main at largest3.c:11
+2       breakpoint     keep y   0x0000000000000806 in main at largest3.c:34
+(gdb) r
+Starting program: /home/km/sai/while/largest_debug 
+enter no. of inputs =5
+enter a and b values =2
+3
+
+Breakpoint 1, main () at largest3.c:11
+11	       while(i<n)
+(gdb) s
+13		       printf("enter new input =");
+(gdb) n
+14		       scanf("%d",&c);
+(gdb) n
+enter new input =1
+15		       if(a>b)
+(gdb) s
+21			       a=c;
+(gdb) s
+23		       if(e<f)
+(gdb) s
+25			       f=c;
+(gdb) s
+31		       i=i+1;
+(gdb) s
+11	       while(i<n)
+(gdb) n
+13		       printf("enter new input =");
+(gdb) n
+14		       scanf("%d",&c);
+(gdb) n
+enter new input =6
+15		       if(a>b)
+(gdb) p a
+$1 = 1
+(gdb) p e
+$2 = 2
+(gdb) c
+Continuing.
+enter new input =1
+
+Breakpoint 2, main () at largest3.c:34
+34	       if(e<f)
+(gdb) c
+Continuing.
+1 is smallest number
+6 is largest number
+[Inferior 1 (process 2410) exited normally]
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555547a1 in main at largest3.c:11
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000555555554806 in main at largest3.c:34
+	breakpoint already hit 1 time

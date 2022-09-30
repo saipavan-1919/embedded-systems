@@ -1,0 +1,12 @@
+1.a. What is a ZOMBIE process?
+ans:
+	Every process consist one parent process,i.e,the ongoing process is known as child process.
+	If the child process is terminated without any information to the parent process, 
+	then parent process assumes the chld process is still running 
+	that kind of process is known as ZOMBIE process.
+
+1.b. What is an ORPHAN process?
+ans:
+	Every process contains a parent process, and every child process contains a parnet process.
+	If the parent process is terminated before the child process then that kind of child process is
+	known as ORPHAN process. By default that child process runs under the grand parent process (pid=1).

@@ -1,0 +1,36 @@
+FORK" system call:
+
+	The fork system call duplicates the entire process. The fork system call creates a new child process.
+	When fork system call is invoked then the entire program is copied into the memory in another location.
+	Fork system call returns two values one is zero and other one is child pid value.Both parent and child has
+	no relation in processing.Both of them will be processed individually.
+
+	syntax: pid_t fork(void);
+
+	if return value= 0 		; then child process runs
+	if return value= child pid	; then parent process runs
+	if return value= -1             ; fork fails i.e, cannot duplicate process
+ 
+                                           FORK
+ 				            |
+                          __________________|______________________
+                         |                                         |
+                      parent                                     child
+
+"VFORK" system call:
+
+	Vfork is also similar to the fork system call only but it blocks the parent process until the termonation
+	of the child process created by vfork.
+	Both the child and parent processes share same memory space.
+
+	syntax: pid_t vfork(void);
+	
+"EXECVE" system call:
+
+	execve system call replaces the current running process with the argument given to the execve system call. 
+	execve system call returns no value if it is success.
+	if the system call is failed then it will return "-1".
+
+	 syntax: int execve(const char *filename, char *const argv[],char *const envp[]);
+
+         we can use both fork and execve system calls to create a differnet process in a running process.	

@@ -1,0 +1,15 @@
+
+	Global variables can be accessed by everyone, so when we use global variables we get unexpected output.
+	when we are using threads we mainly get data inconsistancy as a big problem. To overcome that we need to
+	make threads safe.
+	we can make the threads safe by using thread synchronization mechanisms.
+	we can use signals to synchronise the threads and make the threads safe.
+
+	we also have a mechanism which uses the semaphores. The semaphore is a special integer 's'.
+	It can be accessed by only "sema_wait()" and "sema_post()" system calls.
+
+	the programmer should write a code that synchronises the threads perfectly.
+	The code must contain three sections, they are
+	1)Entry section
+	2)critical section
+	3)exit section 

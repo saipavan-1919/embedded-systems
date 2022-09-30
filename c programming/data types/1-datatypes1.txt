@@ -1,0 +1,25 @@
+ There are 4 primitive data types,they are
+1) integer 
+2) float
+3) double
+4) chararcter
+ these data types are qualified using qualifiers, they are
+1) size
+   a)long
+   b)short
+2)sign 
+   a)signed
+   b)unsigned
+In total there are 11 data types, they are
+S.NO       DATA TYPE          FORMAT SPECIFIER
+1            signedint                  %d
+2           unsignedint               %u
+3       shortsignedint                %h
+4       longsignedint                 %l
+5        longunsignedint              %lu
+6       shortunsignedint              %hu
+7       signedchar                    %c
+8       unsigned char                 %c
+9         float                       %f
+10         double                     %lf
+11      long double                   %LF

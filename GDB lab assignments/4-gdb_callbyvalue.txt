@@ -1,0 +1,44 @@
+Reading symbols from debug4...done.
+(gdb) b 7
+Breakpoint 1 at 0x602: file swapcbv.c, line 7.
+(gdb) b 14
+Breakpoint 2 at 0x630: file swapcbv.c, line 14.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000000602 in main at swapcbv.c:7
+2       breakpoint     keep y   0x0000000000000630 in swapcbv at swapcbv.c:14
+(gdb) r
+Starting program: /home/km/sai/debug_example/debug4 
+
+Breakpoint 1, main () at swapcbv.c:7
+7	int a=10,b=20;
+(gdb) s
+8	swapcbv(a,b);
+(gdb) s
+
+Breakpoint 2, swapcbv (a=10, b=20) at swapcbv.c:15
+15	t=a;
+(gdb) p a
+$1 = 10
+(gdb) p b
+$2 = 20
+(gdb) s
+16	a=b;
+(gdb) s
+17	b=t;
+(gdb) s
+18	}
+(gdb) p a
+$3 = 20
+(gdb) p b
+$4 = 10
+(gdb) s
+main () at swapcbv.c:9
+9	return 0;
+(gdb) s
+10	}
+(gdb) s
+__libc_start_main (main=0x5555555545fa <main>, argc=1, argv=0x7fffffffe198, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffe188) at ../csu/libc-start.c:344
+344	../csu/libc-start.c: No such file or directory.
+

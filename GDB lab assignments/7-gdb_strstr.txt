@@ -1,0 +1,77 @@
+Reading symbols from debug7...done.
+(gdb) b 7
+Breakpoint 1 at 0x6ea: file strstr.c, line 7.
+(gdb) b 14
+Breakpoint 2 at 0x728: file strstr.c, line 14.
+(gdb) b 18
+Breakpoint 3 at 0x75f: file strstr.c, line 18.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00000000000006ea in main at strstr.c:7
+2       breakpoint     keep y   0x0000000000000728 in mystrstr at strstr.c:14
+3       breakpoint     keep y   0x000000000000075f in mystrstr at strstr.c:18
+(gdb) r
+Starting program: /home/km/sai/strings2/debug7 
+
+Breakpoint 1, main () at strstr.c:7
+7	mystrstr(str,substr);
+(gdb) s
+
+Breakpoint 2, mystrstr (str=0x7fffffffe070 "hi everyone hello", substr=0x7fffffffe06c "one") at strstr.c:14
+14	for(i=0;str[i]!='\0';i++)
+(gdb) s
+17	printf("size of str=%d",i);
+(gdb) n
+
+Breakpoint 3, mystrstr (str=0x7fffffffe070 "hi everyone hello", substr=0x7fffffffe06c "one") at strstr.c:18
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+18		for(int j=0;j<i;j++)
+(gdb) s
+20			if(substr[0]==str[j])
+(gdb) s
+22				if(substr[1]==str[j+1])
+(gdb) s
+24					if(substr[2]==str[j+2])
+(gdb) s
+26							printf("the string matched");
+(gdb) n
+27							break;
+(gdb) s
+34	}
+(gdb) s
+main () at strstr.c:8
+8	return 0;
+(gdb) s
+9	}
+

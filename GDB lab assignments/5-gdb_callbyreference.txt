@@ -1,0 +1,56 @@
+Reading symbols from debug5...done.
+(gdb) b 8
+Breakpoint 1 at 0x681: file swapcbr.c, line 8.
+(gdb) r
+Starting program: /home/km/sai/debug_example/debug5 
+
+Breakpoint 1, main () at swapcbr.c:8
+8	int a=10,b=20;
+(gdb) p a
+$1 = -7792
+(gdb) p b
+$2 = 32767
+(gdb) s
+10	swapcbr(&a,&b);
+(gdb) p a
+$3 = 10
+(gdb) p b
+$4 = 20
+(gdb) n           // executed complete function
+11	return 0;
+(gdb) s
+12	}
+(gdb) s
+__libc_start_main (main=0x55555555466a <main>, argc=1, argv=0x7fffffffe198, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffe188) at ../csu/libc-start.c:344
+344	../csu/libc-start.c: No such file or directory.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/km/sai/debug_example/debug5 
+
+Breakpoint 1, main () at swapcbr.c:8
+8	int a=10,b=20;
+(gdb) s
+10	swapcbr(&a,&b);   //dubugged step by step
+(gdb) s
+swapcbr (p1=0x7fffffffe0a0, p2=0x7fffffffe0a4) at swapcbr.c:17
+17	t=*p1;
+(gdb) s
+18	*p1=*p2;
+(gdb) s
+19	*p2=t;
+(gdb) s
+20	}
+(gdb) s
+main () at swapcbr.c:11
+11	return 0;
+(gdb) p a
+$5 = 20
+(gdb) p a
+$6 = 20
+(gdb) p b
+$7 = 10
+(gdb) s
+12	}
+

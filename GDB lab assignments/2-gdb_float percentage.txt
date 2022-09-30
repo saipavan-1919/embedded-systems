@@ -1,0 +1,75 @@
+Reading symbols from debug2...done.
+(gdb) b 8
+Breakpoint 1 at 0x784: file percentfloat.c, line 8.
+(gdb) r
+Starting program: /home/km/sai/debug_example/debug2 
+enter 6 subject marks a,b,c,d,e,f55
+55
+55
+55
+56
+56
+
+Breakpoint 1, main () at percentfloat.c:8
+8		marks=a+b+c+d+e+f;
+(gdb) s
+9		printf("total marks = %d\n",marks);
+(gdb) n
+total marks = 332
+10	        percent=((float)marks/600)*div_value;
+(gdb) p div value
+A syntax error in expression, near `value'.
+(gdb) p div_value
+$1 = 600
+(gdb) s
+11		printf("percent=%.2f\n",percent);
+(gdb) n
+percent=332.00
+12		if((percent>=0)&&(percent<=39))
+(gdb) s
+14		if((percent>=40)&&(percent<=49))
+(gdb) s
+16		if((percent>=50)&&(percent<=59))
+(gdb) s
+18		if((percent>=60)&&(percent<=79))
+(gdb) s
+20		if((percent>=80)&&(percent<=100))
+(gdb) s
+22		return 0;
+(gdb) s
+23	}
+(gdb) s
+__libc_start_main (main=0x55555555471a <main>, argc=1, argv=0x7fffffffe168, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffe158) at ../csu/libc-start.c:344
+344	../csu/libc-start.c: No such file or directory.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/km/sai/debug_example/debug2 
+enter 6 subject marks a,b,c,d,e,f55
+55
+55
+55
+55
+55
+
+Breakpoint 1, main () at percentfloat.c:8
+8		marks=a+b+c+d+e+f;
+(gdb) s
+9		printf("total marks = %d\n",marks);
+(gdb) n
+total marks = 330
+10	        percent=((float)marks/600)*div_value;
+(gdb) p div_value 
+$2 = 600
+(gdb) p div_value=0 
+$3 = 0
+(gdb) s
+11		printf("percent=%.2f\n",percent);
+(gdb) n
+percent=0.00
+12		if((percent>=0)&&(percent<=39))
+(gdb) s
+13			printf("grade= Fail");
+(gdb) s
+
